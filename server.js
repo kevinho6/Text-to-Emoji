@@ -1,3 +1,5 @@
+const emojiObject = require('./textEmojis.json');
+
 const Express = require('express');
 const App = Express();
 const Port = App.listen(8000);
@@ -18,27 +20,22 @@ App.use(Express.static('viewer'));
 // create a globl empty array
 const allTheData = [];
 // theData has to be outside of the scope of the App.post method
-let theData;
+const theData = new Object();
+theData.emojiObject = emojiObject;
 
 App.post('/sendUserData', function(req, res) {
-  // Because it's a POST we use req.body to get the data
-  console.log(req.body.rawText);
-  // res.send("They submitted: " + req.body.first + " " + req.body.last);
-  // now we're gonna create a JSON (!!)
-
   // Create an object using JSON
   const data = {
     rawText: req.body.rawText,
   };
   allTheData.push(data);
 
-  theData = new Object();
   // put data into a the global array.
   theData.allTheData = allTheData;
-  console.log(theData);
 
   // package array into an object to pass into template
   res.render('template.ejs', theData);
+
   //splice previsous user data from the array
   allTheData.splice(0, allTheData.length);
 });

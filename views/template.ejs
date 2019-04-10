@@ -12,8 +12,17 @@
   </head>
 
   <body>
-    <% for (var i = 0; i < allTheData.length; i++) { %>
-    <h1>Raw Text: <span id="first"><%=allTheData[i].rawText%></span></h1>
-    <% } %>
+    <div class="container">
+      <% for (var i = 0; i < allTheData.length; i++) { %>
+      <h1><span id="text"><%=allTheData[i].rawText%></span></h1>
+      <h1>
+        =
+        <span id="emoji"><%=emojiObject[allTheData[i].rawText]%></span>
+      </h1>
+      <% } %>
+    </div>
+    <div class="container">
+      <button onclick="window.history.go(-1)">Back</button>
+    </div>
   </body>
 </html>
