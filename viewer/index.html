@@ -1,26 +1,35 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Week 12</title>
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="script.js" defer></script>
+  </head>
 
-<head>
-	<title>Week 12</title>
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-	<link href="style.css" rel="stylesheet" type="text/css">
-	<meta charset="utf-8">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="script.js" defer></script>
-</head>
-
-<body>
-  <div class="container">
-	  <h2 id="title">Text to Emoji</h2>
-  </div>
-  <div class="container">
-    <form method="POST" action="/sendUserData">
-      <input name="rawText" type="text">
-      <br/>
-      <br/>
-      <input type="submit" value="Convert">
-    </form>
-  </div>
-</body>
-
+  <body>
+    <div class="container">
+      <div>
+        <h2 id="title">Text to Emoji</h2>
+      </div>
+      <div>
+        <form method="POST" action="/sendUserData">
+          <input name="rawText" type="text" class="form-control" />
+          <br />
+          <input type="submit" value="Convert" class="btn btn-warning" />
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
